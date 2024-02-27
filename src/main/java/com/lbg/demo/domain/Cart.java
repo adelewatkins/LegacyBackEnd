@@ -17,6 +17,8 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
+	private String name;
+
 	@JsonManagedReference
 	@OneToMany(mappedBy = "Cart")
 	private List<Item> items;
@@ -35,6 +37,14 @@ public class Cart {
 
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
