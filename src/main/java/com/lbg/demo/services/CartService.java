@@ -55,4 +55,10 @@ public class CartService {
 		return ResponseEntity.ok(edited);
 	}
 
+	public boolean delete(int id) {
+		this.repo.deleteById(id);
+
+		return !this.repo.existsById(id);
+	}
+
 }

@@ -52,9 +52,10 @@ public class ItemService {
 		if (newItem.getPrice() != 0) {
 			existing.setPrice(newItem.getPrice());
 		}
-		if (newItem.getQuantity() != 0) {
+		if (newItem.getQuantity() != null) {
 			existing.setQuantity(newItem.getQuantity());
 		}
+
 		Item edited = this.repo.save(existing);
 
 		return ResponseEntity.ok(edited);

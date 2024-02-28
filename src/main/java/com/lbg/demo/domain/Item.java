@@ -19,7 +19,7 @@ public class Item {
 
 	private double price;
 
-	private int quantity;
+	private Integer quantity;
 
 	@JsonBackReference
 	@ManyToOne
@@ -53,11 +53,11 @@ public class Item {
 		this.price = price;
 	}
 
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 
