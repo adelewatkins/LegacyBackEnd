@@ -23,7 +23,7 @@ public class Item {
 
 	@JsonBackReference
 	@ManyToOne
-	private Cart Cart;
+	private Cart cart;
 
 	public Item() {
 		super();
@@ -59,6 +59,14 @@ public class Item {
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 }

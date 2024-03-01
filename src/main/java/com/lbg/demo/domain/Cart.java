@@ -20,7 +20,7 @@ public class Cart {
 	private String name;
 
 	@JsonManagedReference
-	@OneToMany(mappedBy = "Cart")
+	@OneToMany(mappedBy = "cart")
 	private List<Item> items;
 
 	public Integer getId() {

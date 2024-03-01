@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -45,6 +46,16 @@ public class ItemController {
 	@PutMapping("/edit/{id}")
 	public ResponseEntity<Item> editItem(@PathVariable int id, @RequestBody Item newItem) {
 		return this.service.editItem(id, newItem);
+	}
+
+	@PatchMapping("/checkOut/{itemId}/{cartId}")
+	public ResponseEntity<Item> checkOut(@PathVariable int itemId, @PathVariable int cartId) {
+		return this.service.checkOut(itemId, cartId);
+	}
+
+	@PatchMapping("/checkIn/{itemId}")
+	public ResponseEntity<Item> checkIn(@PathVariable int itemId) {
+		return this.service.checkIn(itemId);
 	}
 
 }
