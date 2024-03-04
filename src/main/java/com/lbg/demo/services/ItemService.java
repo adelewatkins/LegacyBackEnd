@@ -85,7 +85,7 @@ public class ItemService {
 		}
 
 		existing.setCart(customer.get());
-
+		existing.setQuantity(0);
 		Item updated = this.repo.save(existing);
 
 		return ResponseEntity.ok(updated);
@@ -102,6 +102,7 @@ public class ItemService {
 		Item existing = toCheckOut.get();
 
 		existing.setCart(null);
+		existing.setQuantity(1);
 
 		Item checkedIn = this.repo.save(existing);
 
